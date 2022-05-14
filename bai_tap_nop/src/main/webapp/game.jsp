@@ -1,30 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Game Đoán Số</title>
 <link rel="stylesheet" href="./css/game.css">
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
 	crossorigin="anonymous">
+<title>Game Đoán Số</title>
 </head>
 <body>
 	<div class="vertical-center">
 		<div class="container">
-			<h3>Tôi đang nghĩ tới một số từ 1 đến 1000.</h3>
-			<h3>Bạn có thể đoán được không?</h3>
-			<input type="number" placeholder="số" min="1" max="1000"><br>
-			<button>Dự Đoán</button>
-			<p>Số bạn vừa đoán nhỏ hơn đáp án!</p>
+			<img src="./img/animation-run.gif">
+			<h3>
+				Tôi đang nghĩ tới một số từ 1 đến 1000.<br>Bạn có thể đoán được
+				không?
+			</h3>
+			<form action="game" method="post">
+				<input name="numGuess" class="form-control" type="number"
+					placeholder="Số" min="1" max="1000" required>
+				<button>Dự đoán</button>
+			</form>
+			<p>${botRep}</p>
 		</div>
 	</div>
 	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 		crossorigin="anonymous"></script>
 </body>
 </html>
