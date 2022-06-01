@@ -2,7 +2,6 @@
 	pageEncoding="utf-8"%>
 <%@ page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +34,7 @@
 					bán</label>
 			</div>
 			<a href="javascript:$('form').submit()"> <span></span><span></span>
-				<span></span> <span></span> LƯU LẠI
+				<span></span> <span></span> Lưu lại
 			</a>
 		</form>
 		<div class="scrollbar">

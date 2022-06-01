@@ -49,7 +49,7 @@ public class GameMethod {
 	public static void CheckGamePlay(int num, int x) {
 		_checkState_ = num == x ? "CORRECT" : num == _guessNum_ ? "EXIST" : "";
 		_isDialog_ = _checkState_ == "" ? "false" : "true";
-		_guessNum_ =  num;
+		_guessNum_ = num;
 	}
 
 	// result string

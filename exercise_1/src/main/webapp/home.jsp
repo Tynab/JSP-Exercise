@@ -23,7 +23,7 @@
 			<h3 class="sub">Lorem ipsum dolor sit amet</h3>
 			<form action="" method="post">
 				<div class="btns">
-					<a href="javascript:$('form').submit()">Logout</a>
+					<a href="javascript:$('form').submit()">Enter</a>
 				</div>
 			</form>
 		</div>
