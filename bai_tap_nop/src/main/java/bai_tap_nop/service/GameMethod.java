@@ -1,12 +1,13 @@
-package bai_tap_nop.script;
+package bai_tap_nop.service;
 
-import java.util.List;
-import java.util.ArrayList;
-import bai_tap_nop.model.Player;
+import java.util.*;
 
+import bai_tap_nop.model.*;
+
+import static bai_tap_nop.service.GameConstant.*;
 import static java.lang.Integer.*;
+
 import static java.util.Collections.*;
-import static bai_tap_nop.script.GameConstant.*;
 
 public class GameMethod {
 	// fields

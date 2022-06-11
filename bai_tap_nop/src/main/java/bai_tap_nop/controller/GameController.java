@@ -1,16 +1,16 @@
 package bai_tap_nop.controller;
 
-import java.io.IOException;
-import java.util.Random;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.io.*;
 
+import java.util.*;
+
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
+
+import static bai_tap_nop.service.GameConstant.*;
+import static bai_tap_nop.service.GameMethod.*;
 import static java.lang.Integer.*;
-import static bai_tap_nop.script.GameConstant.*;
-import static bai_tap_nop.script.GameMethod.*;
 
 @SuppressWarnings("serial")
 @WebServlet("/game")
