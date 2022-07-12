@@ -1,7 +1,6 @@
 package exercise_1.controller;
 
 import java.io.*;
-
 import java.util.*;
 
 import javax.servlet.*;

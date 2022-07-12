@@ -1,12 +1,12 @@
 package bai_tap_nop.controller;
 
-import static bai_tap_nop.service.GameMethod.*;
-
 import java.io.*;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
+
+import static bai_tap_nop.service.GameMethod.*;
 
 @SuppressWarnings("serial")
 @WebServlet("/index")
