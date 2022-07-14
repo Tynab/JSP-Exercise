@@ -7,10 +7,9 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
-import static java.lang.Integer.*;
-
 import static bai_tap_nop.service.GameConstant.*;
 import static bai_tap_nop.service.GameMethod.*;
+import static java.lang.Integer.*;
 
 @SuppressWarnings("serial")
 @WebServlet("/game")

@@ -7,10 +7,10 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
-import static java.lang.Integer.*;
-import static java.lang.Double.*;
+import exercise_1.pojo.*;
 
-import exercise_1.pojo.User;
+import static java.lang.Double.*;
+import static java.lang.Integer.*;
 
 @SuppressWarnings("serial")
 @WebServlet("/product")
