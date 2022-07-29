@@ -20,7 +20,7 @@ public class GameController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		SubReset();
+		subReset();
 		req.getRequestDispatcher("game.jsp").forward(req, resp);
 	}
 
@@ -30,10 +30,10 @@ public class GameController extends HttpServlet {
 		switch (req.getParameter("submit")) {
 		case "checkin":
 			var num = parseInt(req.getParameter("numGuess"));
-			CheckGamePlay(num, x);
+			checkGamePlay(num, x);
 			if (checkState != "EXIST") {
 				counter++;
-				req.setAttribute("botRep", StrAnswer(num, x));
+				req.setAttribute("botRep", strAnswer(num, x));
 			}
 			if (guessNum > -1) {
 				req.setAttribute("savedNum", guessNum);
@@ -41,19 +41,19 @@ public class GameController extends HttpServlet {
 			req.getRequestDispatcher("game.jsp").forward(req, resp);
 			break;
 		case "checkout":
-			UpdateCurrentPlayer(counter);
-			SelfReset();
-			PlayersRanking();
+			updateCurrentPlayer(counter);
+			selfReset();
+			playersRanking();
 			resp.sendRedirect("index.jsp");
 			break;
 		}
 	}
 
 	// reset game
-	private void SelfReset() {
+	private void selfReset() {
 		counter = 0;
 		x = new Random().nextInt(HI_VAL - LO_VAL) + LO_VAL;
-		MainReset();
-		SubReset();
+		mainReset();
+		subReset();
 	}
 }

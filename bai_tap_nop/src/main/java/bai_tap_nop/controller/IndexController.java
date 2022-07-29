@@ -13,7 +13,7 @@ import static bai_tap_nop.service.GameMethod.*;
 public class IndexController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		MainReset();
+		mainReset();
 		req.getRequestDispatcher("index.jsp").forward(req, resp);
 	}
 
@@ -23,14 +23,14 @@ public class IndexController extends HttpServlet {
 		switch (req.getParameter("submit")) {
 		case "check":
 			isMsgbox = "true";
-			CheckRegister(req.getParameter("playerName"));
+			checkRegister(req.getParameter("playerName"));
 			req.setAttribute("savedName", registerName);
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
 			break;
 		case "verify":
-			DropPlayer(registerName);
+			dropPlayer(registerName);
 		case "go":
-			currentPlayer = CreatePlayer(registerName, 0);
+			currentPlayer = createPlayer(registerName, 0);
 			resp.sendRedirect("game.jsp");
 			break;
 		}
