@@ -15,7 +15,7 @@ import static java.lang.Integer.*;
 @SuppressWarnings("serial")
 @WebServlet("/product")
 public class ProductController extends HttpServlet {
-	List<User> users = new ArrayList<>();
+	private List<User> users = new ArrayList<>();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

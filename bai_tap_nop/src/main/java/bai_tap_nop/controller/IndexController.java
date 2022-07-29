@@ -22,15 +22,15 @@ public class IndexController extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		switch (req.getParameter("submit")) {
 		case "check":
-			_isMsgbox_ = "true";
+			isMsgbox = "true";
 			CheckRegister(req.getParameter("playerName"));
-			req.setAttribute("savedName", _registerName_);
+			req.setAttribute("savedName", registerName);
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
 			break;
 		case "verify":
-			DropPlayer(_registerName_);
+			DropPlayer(registerName);
 		case "go":
-			_currentPlayer_ = CreatePlayer(_registerName_, 0);
+			currentPlayer = CreatePlayer(registerName, 0);
 			resp.sendRedirect("game.jsp");
 			break;
 		}

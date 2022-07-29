@@ -15,8 +15,8 @@ import static java.lang.Integer.*;
 @WebServlet("/game")
 public class GameController extends HttpServlet {
 	// fields
-	private int _counter = 0;
-	private int _x = new Random().nextInt(HI_VAL - LO_VAL) + LO_VAL;
+	private int counter = 0;
+	private int x = new Random().nextInt(HI_VAL - LO_VAL) + LO_VAL;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,18 +30,18 @@ public class GameController extends HttpServlet {
 		switch (req.getParameter("submit")) {
 		case "checkin":
 			var num = parseInt(req.getParameter("numGuess"));
-			CheckGamePlay(num, _x);
-			if (_checkState_ != "EXIST") {
-				_counter++;
-				req.setAttribute("botRep", StrAnswer(num, _x));
+			CheckGamePlay(num, x);
+			if (checkState != "EXIST") {
+				counter++;
+				req.setAttribute("botRep", StrAnswer(num, x));
 			}
-			if (_guessNum_ > -1) {
-				req.setAttribute("savedNum", _guessNum_);
+			if (guessNum > -1) {
+				req.setAttribute("savedNum", guessNum);
 			}
 			req.getRequestDispatcher("game.jsp").forward(req, resp);
 			break;
 		case "checkout":
-			UpdateCurrentPlayer(_counter);
+			UpdateCurrentPlayer(counter);
 			SelfReset();
 			PlayersRanking();
 			resp.sendRedirect("index.jsp");
@@ -51,8 +51,8 @@ public class GameController extends HttpServlet {
 
 	// reset game
 	private void SelfReset() {
-		_counter = 0;
-		_x = new Random().nextInt(HI_VAL - LO_VAL) + LO_VAL;
+		counter = 0;
+		x = new Random().nextInt(HI_VAL - LO_VAL) + LO_VAL;
 		MainReset();
 		SubReset();
 	}
