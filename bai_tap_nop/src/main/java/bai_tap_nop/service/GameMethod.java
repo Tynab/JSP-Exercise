@@ -10,14 +10,14 @@ import static java.util.Collections.*;
 
 public class GameMethod {
 	// fields
-	public static List<Player> players = new ArrayList<Player>();
-	public static Player currentPlayer;
-	public static String registerState = "";
-	public static String registerName = "";
-	public static String isMsgbox = "false";
-	public static String checkState = "";
-	public static String isDialog = "false";
-	public static int guessNum = -1;
+	public static List<Player> players = new ArrayList<>();
+	public static Player current_player;
+	public static String register_name = "";
+	public static String register_state = "";
+	public static String check_state = "";
+	public static String is_msgBox = "false";
+	public static String is_dialog = "false";
+	public static int guess_num = -1;
 
 	// create player
 	public static Player createPlayer(String name, int counter) {
@@ -34,12 +34,12 @@ public class GameMethod {
 
 	// check register of new player
 	public static void checkRegister(String name) {
-		registerName = name;
-		registerState = "UNREGISTERED";
+		register_name = name;
+		register_state = "UNREGISTERED";
 		if (players.size() > 0) {
 			for (var player : players) {
-				if (player.getPlayerName().equals(registerName)) {
-					registerState = "REGISTERED";
+				if (player.getPlayerName().equals(register_name)) {
+					register_state = "REGISTERED";
 				}
 			}
 		}
@@ -47,9 +47,9 @@ public class GameMethod {
 
 	// result string
 	public static void checkGamePlay(int num, int x) {
-		checkState = num == x ? "CORRECT" : num == guessNum ? "EXIST" : "";
-		isDialog = checkState == "" ? "false" : "true";
-		guessNum = num;
+		check_state = num == x ? "CORRECT" : num == guess_num ? "EXIST" : "";
+		is_dialog = check_state == "" ? "false" : "true";
+		guess_num = num;
 	}
 
 	// result string
@@ -59,22 +59,22 @@ public class GameMethod {
 
 	// reset root
 	public static void mainReset() {
-		registerName = "";
-		registerState = "";
-		isMsgbox = "false";
+		register_name = "";
+		register_state = "";
+		is_msgBox = "false";
 	}
 
 	// reset game
 	public static void subReset() {
-		checkState = "";
-		isDialog = "false";
-		guessNum = -1;
+		check_state = "";
+		is_dialog = "false";
+		guess_num = -1;
 	}
 
 	// reload and add current player to list
 	public static void updateCurrentPlayer(int counter) {
-		currentPlayer.setCounter(counter);
-		players.add(currentPlayer);
+		current_player.setCounter(counter);
+		players.add(current_player);
 	}
 
 	// sort players list by performance

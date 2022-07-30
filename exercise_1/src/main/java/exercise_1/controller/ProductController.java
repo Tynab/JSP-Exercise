@@ -15,7 +15,7 @@ import static java.lang.Integer.*;
 @SuppressWarnings("serial")
 @WebServlet("/product")
 public class ProductController extends HttpServlet {
-	private List<User> users = new ArrayList<>();
+	private List<User> mUsers = new ArrayList<>();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,8 +28,8 @@ public class ProductController extends HttpServlet {
 		user.setNameProduct(req.getParameter("nameproduct"));
 		user.setAmount(parseInt(req.getParameter("amount")));
 		user.setPrice(parseDouble(req.getParameter("price")));
-		users.add(user);
-		req.setAttribute("list", users);
+		mUsers.add(user);
+		req.setAttribute("list", mUsers);
 		req.getRequestDispatcher("product.jsp").forward(req, resp);
 	}
 }

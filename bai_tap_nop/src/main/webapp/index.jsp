@@ -25,8 +25,8 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
 	integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
 	crossorigin="anonymous"></script>
-<c:set var="showMsgbox" value="${GameMethod._isMsgbox_}" scope="request" />
-<c:set var="playerState" value="${GameMethod._registerState_}"
+<c:set var="showMsgbox" value="${GameMethod.is_msgBox}" scope="request" />
+<c:set var="playerState" value="${GameMethod.register_state}"
 	scope="request" />
 <script>
 	$(document).ready(function() {
@@ -105,7 +105,7 @@
 						</thead>
 						<tbody>
 							<c:set var="no" value="0" />
-							<c:forEach var="player" items="${GameMethod._players_}">
+							<c:forEach var="player" items="${GameMethod.players}">
 								<c:set var="no" value="${no+1}" />
 								<tr>
 									<td>${no}</td>

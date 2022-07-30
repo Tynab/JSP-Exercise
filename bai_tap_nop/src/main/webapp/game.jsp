@@ -24,8 +24,8 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
 	integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
 	crossorigin="anonymous"></script>
-<c:set var="showDialog" value="${GameMethod._isDialog_}" scope="request" />
-<c:set var="gameState" value="${GameMethod._checkState_}"
+<c:set var="showDialog" value="${GameMethod.is_dialog}" scope="request" />
+<c:set var="gameState" value="${GameMethod.check_state}"
 	scope="request" />
 <script>
 	$(document).ready(function() {
