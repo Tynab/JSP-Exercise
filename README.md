@@ -9,6 +9,6 @@ Game Đoán Số:
 - Ai có số lần đoán ít nhất đến khi đoán đúng số sẽ xếp hạng nhất.
 
 ## HÌNH ẢNH DEMO
-<p align="center">
-<img src="https://raw.githubusercontent.com/Tynab/JSP-Exercise/master/pic/0.jpg"></img>
+<p align='center'>
+<img src='pic/0.jpg'></img>
 </p>
